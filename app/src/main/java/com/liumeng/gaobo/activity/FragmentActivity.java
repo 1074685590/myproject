@@ -15,7 +15,7 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
     ContentFragment mFragment1;
     ContentFragment mFragment2;
     ContentFragment mFragment3;
-    FragmentTransaction mTransaction;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,10 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
         mFragment1 = ContentFragment.newInstance("页面一", "");
         mFragment2 = ContentFragment.newInstance("页面二", "");
         mFragment3 = ContentFragment.newInstance("页面三", "");
-        mTransaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction mTransaction = getSupportFragmentManager().beginTransaction();
         mTransaction.add(R.id.content, mFragment1);
+        mTransaction.add(R.id.content,mFragment2).hide(mFragment2)
+                .add(R.id.content,mFragment3).hide(mFragment3);
         mTransaction.commit();
     }
 
@@ -47,13 +49,18 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         switch (v.getId()) {
             case R.id.btn1:
+                fragmentTransaction.show(mFragment1).hide(mFragment2).hide(mFragment3);
                 break;
             case R.id.btn2:
+                fragmentTransaction.show(mFragment2).hide(mFragment1).hide(mFragment3);
                 break;
             case R.id.btn3:
+                fragmentTransaction.show(mFragment3).hide(mFragment2).hide(mFragment1);
                 break;
         }
+        fragmentTransaction.commit();
     }
 }
