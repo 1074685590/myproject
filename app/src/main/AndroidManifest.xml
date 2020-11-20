@@ -3,8 +3,10 @@
           package="com.liumeng.gaobo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/><!--这行代码必须存在，否则点击不了系统设置中的按钮-->
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW"/> <!-- 这行代码必须存在，否则点击不了系统设置中的按钮 -->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,23 +14,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.HandlerActivity">
+        <activity android:name=".activity.FragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TestViewActivity">
+        <activity android:name=".activity.HandlerActivity">
 
+        </activity>
+        <activity android:name=".activity.TestViewActivity">
         </activity>
         <activity android:name=".activity.MainActivity">
         </activity>
         <activity android:name=".activity.MyViewTest"/>
         <activity android:name=".activity.TopBarTest"/>
-        <service android:name=".service.TestIntentService"
-                 android:enabled="true"
-                 android:exported="true"/>
+
+        <service
+            android:name=".service.TestIntentService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>
