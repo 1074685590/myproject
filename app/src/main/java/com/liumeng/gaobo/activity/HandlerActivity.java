@@ -34,6 +34,12 @@ public class HandlerActivity extends AppCompatActivity {
         //        method1();
 
         method2();
+        mHandler2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        },0);
     }
 
     private void method2() {
