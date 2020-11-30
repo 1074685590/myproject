@@ -15,7 +15,10 @@ import android.view.View;
 import com.liumeng.gaobo.R;
 import com.liumeng.gaobo.service.TestIntentService;
 
+import java.lang.ref.WeakReference;
+
 public class HandlerActivity extends AppCompatActivity {
+
 
     private static final int REQUEST_CODE = 100;
     Handler mHandler;
@@ -106,6 +109,23 @@ public class HandlerActivity extends AppCompatActivity {
                     Log.i("xqxinfo", "onActivityResult granted");
                 }
             }
+        }
+    }
+    private final MyHandler  mMyHandler = new MyHandler(this);
+    private static class MyHandler extends Handler{
+        private final WeakReference<HandlerActivity> mActivity;
+
+        public MyHandler(HandlerActivity activity) {
+            this.mActivity = new WeakReference<HandlerActivity>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            HandlerActivity handlerActivity = mActivity.get();
+            if (handlerActivity == null) {
+                return;
+            }
+            //you code here
         }
     }
 
