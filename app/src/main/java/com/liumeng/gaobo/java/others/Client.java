@@ -1,5 +1,8 @@
 package com.liumeng.gaobo.java.others;
 
+import com.liumeng.gaobo.java.dai.ILawsuit;
+import com.liumeng.gaobo.java.dai.XiaoMin;
+
 import java.lang.reflect.Proxy;
 
 public class Client {

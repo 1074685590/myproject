@@ -1,7 +1,7 @@
-package com.liumeng.gaobo.java.others;
+package com.liumeng.gaobo.java.dai;
 public class Lawyer implements ILawsuit{
 
-    private ILawsuit mLawsuit; //����һ�����屻�����ߵ�����
+    private ILawsuit mLawsuit; //持有一个具体被代理者的引用
 
     public Lawyer(ILawsuit lawsuit) {
         this.mLawsuit = lawsuit;

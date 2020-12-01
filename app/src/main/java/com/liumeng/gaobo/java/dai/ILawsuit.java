@@ -1,23 +1,23 @@
-package com.liumeng.gaobo.java.others;
+package com.liumeng.gaobo.java.dai;
 public interface ILawsuit {
 
     /**
-     * �ύ���� 
+     * 提交申请
      */
     void submit();
 
     /**
-     * ���о�֤ 
+     * 进行举证
      */
     void burden();
 
     /**
-     * ��ʼ�绤
+     * 开始辩护
      */
     void defend();
 
     /**
-     * �������
+     * 诉讼完成
      */
     void finish();
 }
